@@ -1,0 +1,19 @@
+<div class="row" style="margin-top: 90px">
+  <mat-card class="col-md-6 offset-3">
+    <mat-card-title>{{detail.lieuDepart}}  ---> {{detail.lieuArrive}}</mat-card-title>
+    <br>
+    <mat-card-subtitle>
+      Date depart: {{detail.dateDepart}} à {{detail.heureDepart}}
+      <br>
+      <br>
+      Date arrivee: {{detail.dateArrive}} à {{detail.heureArrive}}
+      <br>
+      <br>
+      Prix: {{detail.prix}}
+      <br>
+      <br>
+     <p *ngIf="escale!==''"> Escale: {{escale}}</p>
+    </mat-card-subtitle>
+  </mat-card>
+</div>
+

@@ -1,0 +1,32 @@
+<div class="row" style="margin-top: 50px">
+    <div class="col-md-1"></div>
+
+  <app-auto-suggest
+    (valueChange)="updateAuSuggest($event)"
+    *ngFor="let auto of autoSuggestId"
+    [id]="auto.id"
+    [label]="auto.label"
+    class="col-md-2">
+  </app-auto-suggest>
+
+    <app-date-filter
+      *ngFor="let dateComp of dateId"
+      [id]="dateComp.id"
+      [label]="dateComp.label"
+      (valueChange)="updateDate($event)"
+      class="col-md-2">
+    </app-date-filter>
+    <button (click)="lauchFilter()" style="width: inherit; height: 50%; top: 10px"  mat-raised-button color="primary" class="col-md-2">Recherche</button>
+
+</div>
+<div class="row">
+  <div class="col-md-1"></div>
+    <data-table class="col-md-10"
+                [columns]="columns"
+                [displayedColumns]="displayedColumns"
+                [dataSource]="dataSource">
+    </data-table>
+</div>
+
+
+

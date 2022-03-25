@@ -1,0 +1,18 @@
+
+server:
+  port: 8080
+spring:
+  application:
+    name: quickfood
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gestionvol
+    username: postgres
+    password: admin
+    reload: false
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      dialect: org.hibernate.dialect.PostgreSQL94Dialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

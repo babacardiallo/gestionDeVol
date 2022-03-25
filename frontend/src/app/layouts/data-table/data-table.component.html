@@ -1,0 +1,20 @@
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+    <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+      <th mat-header-cell *matHeaderCellDef>
+        {{column.header}}
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <ng-container *ngIf="column.columnDef !== 'action'">
+          {{column.cell(row)}}
+        </ng-container>
+        <ng-container *ngIf="column.columnDef === 'action'">
+          <button  (click)="navigateToDetail(row)" mat-button color="primary">detail</button>
+        </ng-container>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
